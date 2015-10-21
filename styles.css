@@ -1,0 +1,36 @@
+body {
+  padding-right: 3em;
+  padding-left: 3em;
+  color: black;
+  font-family: "Roboto", sans-serif; }
+  body h1, body h4, body h3 {
+    color: #4ECDC4;
+    font-family: "Montserrat", sans-serif; }
+
+form .comment-btn {
+  background: #F38630 !important;
+  color: white !important; }
+
+.comment-display h3 {
+  color: #4ECDC4;
+  font-family: "Montserrat", sans-serif;
+  padding-top: 0.5em; }
+.comment-display p {
+  font-size: 1em !important;
+  padding-top: 0.5em; }
+.comment-display .vote-placeholder {
+  margin-top: 0.5em; }
+.comment-display .vote-btn {
+  display: inline-flex;
+  vertical-align: middle;
+  width: 20px; }
+.comment-display .vote-number {
+  font-size: 1em; }
+.comment-display .upvote {
+  cursor: pointer;
+  color: green; }
+.comment-display .downvote {
+  cursor: pointer;
+  color: red; }
+
+/*# sourceMappingURL=styles.css.map */

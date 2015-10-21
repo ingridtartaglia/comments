@@ -1,0 +1,102 @@
+<html ng-app="comments" ng-cloak>
+<head>
+    <title>#19 - Comments</title>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body ng-controller="commentsCtrl" layout="column">
+    <div flex>
+        <h1 class="md-display-1">Lorem ipsum</h1>
+        <div class="text-placeholder">
+            <p>
+                Lorem ipsum dolor sit amet, everti regione mea ei. Ut ius stet lorem honestatis, mel error moderatius ad.
+                An liber molestiae vix, his nihil probatus at, discere euismod docendi ex sed. Ne vim inermis voluptatibus,
+                quot exerci salutandi in ius. Tamquam elaboraret ad eam, ex aliquam urbanitas duo.
+            </p>
+            <p>
+                Aperiri salutatus cotidieque at pri, usu no liber regione. Unum reque appareat mea te, duo an tacimates delicata,
+                erat habemus noluisse cu pri. Erant zril conclusionemque ne mea, ei mel rebum dolor, est semper evertitur elaboraret at.
+                Nam ea justo admodum expetenda, his aliquid eleifend definitiones no. Eam omnesque consetetur in.
+                An pericula corrumpit usu.
+            </p>
+            <p>
+                Nec id amet prompta concludaturque. Sea impetus eligendi ei, ius id wisi adversarium,
+                ea scribentur vituperatoribus sea. Enim abhorreant ex sea, vim augue cetero eligendi at. Et salutandi persecuti vix.
+                Nec cu perfecto democritum, graecis praesent in per. Id mutat nonumes delicatissimi has, esse illud labore pro an,
+                debitis fastidii usu an.
+            </p>
+            <p>Eu pri quot eruditi, cum simul consetetur intellegebat ea. Ex iisque delenit concludaturque pri,
+                te aliquip gubergren pro, vivendo repudiare deseruisse eum ad. Vix an assum ornatus civibus,
+                ne vel sanctus alienum adipiscing, adipisci gubergren sit eu. Cu vim aliquam tacimates, impedit torquatos mei ad.
+                Ne eos mazim congue reprimique. Cu pri veri interpretaris, ad persius quaerendum cum, et usu quodsi invenire.
+            </p>
+            <p>
+                No usu albucius omittantur voluptatibus. Viderer voluptua eum ad, qui ea omnis zril scriptorem.
+                Id novum congue dissentiet nam. Feugiat consetetur cum eu. Mea ne persius praesent, tollit gloriatur nam an.
+                Qui augue democritum ea.
+            </p>
+        </div>
+        <div class="comments-placeholder">
+            <h4 class="md-headline">Leave a comment</h4>
+            <form name="commentForm" layout-padding novalidate>
+                <md-input-container flex>
+                    <label>Name</label>
+                    <input ng-model="comment.name" class="form-control" name="name" required>
+                    <div ng-messages="commentForm.name.$error" ng-show="commentForm.name.$touched && commentForm.name.$invalid">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>E-mail</label>
+                    <input ng-model="comment.email" class="form-control" type="email" name="email" ng-pattern="/^.+@.+\..+$/">
+                    <div ng-messages="commentForm.email.$error" ng-show="commentForm.email.$touched && commentForm.email.$invalid">
+                        <div ng-message="pattern">Your e-mail must look like an e-mail address.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Your Comment</label>
+                    <textarea ng-model="comment.text" class="form-control" name="text" md-maxlength="300" required></textarea>
+                    <div ng-messages="commentForm.text.$error" ng-show="commentForm.text.$touched && commentForm.text.$invalid">
+                        <div ng-message="required">Enter a short message.</div>
+                    </div>
+                </md-input-container>
+                <md-button class="md-raised comment-btn" ng-click="sendComment(comment)" ng-disabled="commentForm.$invalid">Send</md-button>
+            </form>
+
+            <h3 class="md-headline">Comments</h4>
+            <md-list>
+                <md-list-item class="md-2-line" ng-repeat="comment in comments">
+                    <div class="md-list-item-text comment-display" layout="column">
+                        <h3 class="md-title comment-title">{{comment.name}}</h3>
+                        <p class="comment-date">{{comment.date}}</p>
+                        <p class="comment-text">{{comment.text}}</p>
+                        <div class="vote-placeholder">
+                            <span class="vote-btn" ng-click="upvote(vote)">
+                                <i class="material-icons upvote">expand_less</i>
+                            </span>
+                            <span class="vote-number md-subhead"> {{comment.vote}} </span>
+                            <span class="vote-btn" ng-click="downvote(vote)">
+                                <i class="material-icons downvote">expand_more</i>
+                            </span>
+                        </div>
+                    </div>
+                </md-list-item>
+            </md-list>
+
+        </div>
+    </div>
+
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

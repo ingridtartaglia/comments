@@ -1,0 +1,53 @@
+$blue: #4ECDC4;
+$font-title: 'Montserrat', sans-serif;
+$font-text: 'Roboto', sans-serif;
+
+body {
+    padding-right: 3em;
+    padding-left: 3em;
+    color: black;
+    font-family: $font-text;
+    h1, h4, h3 {
+        color: $blue;
+        font-family: $font-title;
+    }
+}
+
+form {
+    .comment-btn {
+        background: #F38630 !important;
+        color: white !important;
+    }
+}
+
+
+.comment-display {
+    h3 {
+        color: $blue;
+        font-family: $font-title;
+        padding-top: 0.5em;
+    }
+    p {
+        font-size: 1em !important;
+        padding-top: 0.5em;
+    }
+    .vote-placeholder {
+        margin-top: 0.5em;
+    }
+    .vote-btn {
+        display: inline-flex;
+        vertical-align: middle;
+        width: 20px;
+    }
+    .vote-number {
+        font-size: 1em;
+    }
+    .upvote {
+        cursor: pointer;
+        color: green;
+    }
+    .downvote {
+        cursor: pointer;
+        color:red;
+    }
+}
