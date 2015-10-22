@@ -2,9 +2,8 @@ $blue: #4ECDC4;
 $font-title: 'Montserrat', sans-serif;
 $font-text: 'Roboto', sans-serif;
 
+
 body {
-    padding-right: 3em;
-    padding-left: 3em;
     color: black;
     font-family: $font-text;
     h1, h4, h3 {
@@ -25,7 +24,6 @@ form {
     h3 {
         color: $blue;
         font-family: $font-title;
-        padding-top: 0.5em;
     }
     p {
         font-size: 1em !important;
@@ -33,6 +31,7 @@ form {
     }
     .vote-placeholder {
         margin-top: 0.5em;
+        margin-bottom: 3em;
     }
     .vote-btn {
         display: inline-flex;

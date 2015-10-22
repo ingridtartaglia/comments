@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body ng-controller="commentsCtrl" layout="column">
-    <div flex>
+<body ng-controller="commentsCtrl" layout="column" layout-padding>
+    <div class="content" flex>
         <h1 class="md-display-1">Lorem ipsum</h1>
         <div class="text-placeholder">
             <p>
@@ -75,11 +75,11 @@
                         <p class="comment-date">{{comment.date}}</p>
                         <p class="comment-text">{{comment.text}}</p>
                         <div class="vote-placeholder">
-                            <span class="vote-btn" ng-click="upvote(vote)">
+                            <span class="vote-btn" ng-click="upvote(comment)">
                                 <i class="material-icons upvote">expand_less</i>
                             </span>
                             <span class="vote-number md-subhead"> {{comment.vote}} </span>
-                            <span class="vote-btn" ng-click="downvote(vote)">
+                            <span class="vote-btn" ng-click="downvote(comment)">
                                 <i class="material-icons downvote">expand_more</i>
                             </span>
                         </div>

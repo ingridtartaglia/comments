@@ -1,6 +1,4 @@
 body {
-  padding-right: 3em;
-  padding-left: 3em;
   color: black;
   font-family: "Roboto", sans-serif; }
   body h1, body h4, body h3 {
@@ -13,13 +11,13 @@ form .comment-btn {
 
 .comment-display h3 {
   color: #4ECDC4;
-  font-family: "Montserrat", sans-serif;
-  padding-top: 0.5em; }
+  font-family: "Montserrat", sans-serif; }
 .comment-display p {
   font-size: 1em !important;
   padding-top: 0.5em; }
 .comment-display .vote-placeholder {
-  margin-top: 0.5em; }
+  margin-top: 0.5em;
+  margin-bottom: 3em; }
 .comment-display .vote-btn {
   display: inline-flex;
   vertical-align: middle;
