@@ -8,40 +8,41 @@
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body ng-controller="commentsCtrl" layout="column" layout-padding>
+<body ng-controller="commentsCtrl" layout="column">
     <div class="content" flex>
-        <h1 class="md-display-1">Lorem ipsum</h1>
-        <div class="text-placeholder">
-            <p>
-                Lorem ipsum dolor sit amet, everti regione mea ei. Ut ius stet lorem honestatis, mel error moderatius ad.
-                An liber molestiae vix, his nihil probatus at, discere euismod docendi ex sed. Ne vim inermis voluptatibus,
-                quot exerci salutandi in ius. Tamquam elaboraret ad eam, ex aliquam urbanitas duo.
-            </p>
-            <p>
-                Aperiri salutatus cotidieque at pri, usu no liber regione. Unum reque appareat mea te, duo an tacimates delicata,
-                erat habemus noluisse cu pri. Erant zril conclusionemque ne mea, ei mel rebum dolor, est semper evertitur elaboraret at.
-                Nam ea justo admodum expetenda, his aliquid eleifend definitiones no. Eam omnesque consetetur in.
-                An pericula corrumpit usu.
-            </p>
-            <p>
-                Nec id amet prompta concludaturque. Sea impetus eligendi ei, ius id wisi adversarium,
-                ea scribentur vituperatoribus sea. Enim abhorreant ex sea, vim augue cetero eligendi at. Et salutandi persecuti vix.
-                Nec cu perfecto democritum, graecis praesent in per. Id mutat nonumes delicatissimi has, esse illud labore pro an,
-                debitis fastidii usu an.
-            </p>
-            <p>Eu pri quot eruditi, cum simul consetetur intellegebat ea. Ex iisque delenit concludaturque pri,
-                te aliquip gubergren pro, vivendo repudiare deseruisse eum ad. Vix an assum ornatus civibus,
-                ne vel sanctus alienum adipiscing, adipisci gubergren sit eu. Cu vim aliquam tacimates, impedit torquatos mei ad.
-                Ne eos mazim congue reprimique. Cu pri veri interpretaris, ad persius quaerendum cum, et usu quodsi invenire.
-            </p>
-            <p>
-                No usu albucius omittantur voluptatibus. Viderer voluptua eum ad, qui ea omnis zril scriptorem.
-                Id novum congue dissentiet nam. Feugiat consetetur cum eu. Mea ne persius praesent, tollit gloriatur nam an.
-                Qui augue democritum ea.
-            </p>
-        </div>
-        <div class="comments-placeholder">
-            <h4 class="md-headline">Leave a comment</h4>
+        <md-card layout-padding>
+            <h1 class="md-display-1" layout-padding>Lorem ipsum</h1>
+            <div class="text-placeholder" layout-padding>
+                <p class="md-caption">Written by <span style="color: #F38630">Ingrid Tartaglia</span>
+                    <br>21/10/2015 21:58
+                </p>
+                <p style="padding-top:1em">
+                    Lorem ipsum dolor sit amet, everti regione mea ei. Ut ius stet lorem honestatis, mel error moderatius ad.
+                    An liber molestiae vix, his nihil probatus at, discere euismod docendi ex sed. Ne vim inermis voluptatibus,
+                    quot exerci salutandi in ius. Tamquam elaboraret ad eam, ex aliquam urbanitas duo.
+                </p>
+                <p>
+                    Aperiri salutatus cotidieque at pri, usu no liber regione. Unum reque appareat mea te, duo an tacimates delicata,
+                    erat habemus noluisse cu pri. Erant zril conclusionemque ne mea, ei mel rebum dolor, est semper evertitur elaboraret at.
+                    Nam ea justo admodum expetenda, his aliquid eleifend definitiones no. Eam omnesque consetetur in.
+                    An pericula corrumpit usu.
+                </p>
+                <p>
+                    Nec id amet prompta concludaturque. Sea impetus eligendi ei, ius id wisi adversarium,
+                    ea scribentur vituperatoribus sea. Enim abhorreant ex sea, vim augue cetero eligendi at. Et salutandi persecuti vix.
+                    Nec cu perfecto democritum, graecis praesent in per. Id mutat nonumes delicatissimi has, esse illud labore pro an,
+                    debitis fastidii usu an.
+                </p>
+                <p>Eu pri quot eruditi, cum simul consetetur intellegebat ea. Ex iisque delenit concludaturque pri,
+                    te aliquip gubergren pro, vivendo repudiare deseruisse eum ad. Vix an assum ornatus civibus,
+                    ne vel sanctus alienum adipiscing, adipisci gubergren sit eu. Cu vim aliquam tacimates, impedit torquatos mei ad.
+                    Ne eos mazim congue reprimique. Cu pri veri interpretaris, ad persius quaerendum cum, et usu quodsi invenire.
+                </p>
+            </div>
+        </md-card>
+
+        <md-card class="comments-placeholder" layout-padding>
+            <h4 class="md-headline" layout-padding>Leave a comment</h4>
             <form name="commentForm" layout-padding novalidate>
                 <md-input-container flex>
                     <label>Name</label>
@@ -67,12 +68,12 @@
                 <md-button class="md-raised comment-btn" ng-click="sendComment(comment)" ng-disabled="commentForm.$invalid">Send</md-button>
             </form>
 
-            <h3 class="md-headline">Comments</h4>
+            <h3 class="md-headline" layout-padding>Comments</h4>
             <md-list>
-                <md-list-item class="md-2-line" ng-repeat="comment in comments">
+                <md-list-item class="md-2-line" ng-repeat="comment in comments | orderBy:'-vote'">
                     <div class="md-list-item-text comment-display" layout="column">
                         <h3 class="md-title comment-title">{{comment.name}}</h3>
-                        <p class="comment-date">{{comment.date}}</p>
+                        <span class="comment-date md-caption">{{comment.date}}</span>
                         <p class="comment-text">{{comment.text}}</p>
                         <div class="vote-placeholder">
                             <span class="vote-btn" ng-click="upvote(comment)">
@@ -87,7 +88,7 @@
                 </md-list-item>
             </md-list>
 
-        </div>
+        </md-card>
     </div>
 
 

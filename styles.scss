@@ -6,6 +6,15 @@ $font-text: 'Roboto', sans-serif;
 body {
     color: black;
     font-family: $font-text;
+    @media screen and (min-width: 1025px) {
+        .content { padding: 1em 10em; }
+    }
+    @media screen and (max-width: 1024px) {
+        .content { padding: 1em 5em; }
+    }
+    @media screen and (max-width:768px) {
+        .content { padding: 1em 3em; }
+    }
     h1, h4, h3 {
         color: $blue;
         font-family: $font-title;
@@ -29,12 +38,14 @@ form {
         font-size: 1em !important;
         padding-top: 0.5em;
     }
+    span {
+        padding-top: 8px;
+    }
     .vote-placeholder {
         margin-top: 0.5em;
         margin-bottom: 3em;
     }
     .vote-btn {
-        display: inline-flex;
         vertical-align: middle;
         width: 20px;
     }

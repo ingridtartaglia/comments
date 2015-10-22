@@ -1,6 +1,15 @@
 body {
   color: black;
   font-family: "Roboto", sans-serif; }
+  @media screen and (min-width: 1025px) {
+    body .content {
+      padding: 1em 10em; } }
+  @media screen and (max-width: 1024px) {
+    body .content {
+      padding: 1em 5em; } }
+  @media screen and (max-width: 768px) {
+    body .content {
+      padding: 1em 3em; } }
   body h1, body h4, body h3 {
     color: #4ECDC4;
     font-family: "Montserrat", sans-serif; }
@@ -15,11 +24,12 @@ form .comment-btn {
 .comment-display p {
   font-size: 1em !important;
   padding-top: 0.5em; }
+.comment-display span {
+  padding-top: 8px; }
 .comment-display .vote-placeholder {
   margin-top: 0.5em;
   margin-bottom: 3em; }
 .comment-display .vote-btn {
-  display: inline-flex;
   vertical-align: middle;
   width: 20px; }
 .comment-display .vote-number {

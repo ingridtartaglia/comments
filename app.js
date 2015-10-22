@@ -5,10 +5,11 @@ comments.controller('commentsCtrl', function($scope, $firebaseArray){
     var firebase = new Firebase(url);
 
     $scope.comments = $firebaseArray(firebase);
-    
+
 
     $scope.sendComment = function(comment){
         comment.vote = 0;
+        comment.date = new Date().toLocaleString();
         $scope.comments.$add(comment);
         $scope.comment = {};
         $scope.commentForm.$setPristine();
